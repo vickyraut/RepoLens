@@ -1,0 +1,35 @@
+# Server Configuration
+server.port=8080
+
+# Database Configuration (matches docker-compose.yml)
+spring.datasource.url=jdbc:postgresql://localhost:5433/repolens
+spring.datasource.username=postgres
+spring.datasource.password=postgres
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect
+
+# Spring Security OAuth2 (GitHub)
+spring.security.oauth2.client.registration.github.client-id=your-github-client-id
+spring.security.oauth2.client.registration.github.client-secret=your-github-client-secret
+spring.security.oauth2.client.registration.github.scope=read:user,repo
+
+# Spring AI / OpenAI Configuration
+spring.ai.openai.api-key=your-openai-api-key
+spring.ai.openai.chat.options.model=gpt-4o-mini
+spring.ai.openai.embedding.options.model=text-embedding-3-small
+
+# Vector Store (PostgreSQL + pgvector)
+spring.ai.vectorstore.pgvector.initialize-schema=true
+spring.ai.vectorstore.pgvector.dimensions=1536
+spring.ai.vectorstore.pgvector.distance-type=COSINE_DISTANCE
+spring.ai.vectorstore.pgvector.index-type=HNSW
+
+# RepoLens Application Settings
+app.frontend-url=http://localhost:3000
+app.cors.allowed-origins=http://localhost:3000
+app.token-encryptor-password=your-token-encryption-password-at-least-16-chars
+app.token-encryptor-salt=0123456789abcdef
+app.github.api-delay-ms=50
+app.indexing.chunk-size=800
+app.indexing.max-file-bytes=102400
+

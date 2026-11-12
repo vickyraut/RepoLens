@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "RepoLens Backend (BackendApplication)",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.repolens.backend.BackendApplication",
+            "projectName": "backend",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
